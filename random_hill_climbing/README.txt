@@ -1,0 +1,1 @@
+To build the project run "ant build". The resulting jar file will be in the ./build/jar subdirectory. 

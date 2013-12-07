@@ -1,0 +1,41 @@
+<project name="A4" basedir="." default="main">
+
+    <property name="src.dir"     value="."/>
+    <property name="build.dir"   value="build"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="library.dir" value="lib"/>
+    <property name="jar.dir"     value="${build.dir}/jar"/>
+    <property name="main-class"  value="A4"/>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="build">
+        <mkdir dir="${classes.dir}"/>
+        <javac    includeantruntime="false" 
+                        srcdir="${src.dir}" 
+                        destdir="${classes.dir}" 
+                        excludes="${library.dir}/*"
+                        classpath="${library.dir}/BayesNets.jar"/> 
+   </target>
+
+    <target name="jar" depends="build">
+        <mkdir dir="${jar.dir}"/>
+        <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}">
+            <zipfileset includes="**/*.class" src="${library.dir}/BayesNets.jar"/>
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run" depends="jar">
+        <java jar="${jar.dir}/${ant.project.name}.jar" fork="true"/>
+    </target>
+
+    <target name="main" depends="clean,build,jar">
+    </target>
+
+    </project>
+

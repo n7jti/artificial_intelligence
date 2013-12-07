@@ -1,0 +1,53 @@
+
+<project name="A2" basedir="." default="main">
+
+    <property name="src.dir"     value="."/>
+    <property name="build.dir"   value="build"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="jar.dir"     value="${build.dir}/jar"/>
+    <property name="main-class"  value="A2"/>
+   <!-- <property name="project.classpath" value="../aima-core.jar"/>-->
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${classes.dir}"/>
+        <javac 
+            includeantruntime="false" 
+            srcdir="${src.dir}" 
+            destdir="${classes.dir}" 
+            classpath="${project.classpath}"
+            debug="true"  />
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="${jar.dir}"/>
+        <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}"/>
+            </manifest>
+        </jar>
+    </target>
+
+
+    <target name="run" depends="jar">
+        <java classname="${main-class}" fork="true">
+            <arg value="test.graphs"/>
+            <arg value="out.txt"/>
+            <classpath>
+                <pathelement path="${project.classpath}"/>
+                <pathelement location="${jar.dir}/${ant.project.name}.jar" />
+            </classpath>
+        </java>
+    </target>
+
+    <target name="clean-build" depends="clean,jar"/>
+
+    <target name="main" depends="clean,run"/>
+    
+    <target name="build" depends="clean,jar"/>
+
+</project>
+

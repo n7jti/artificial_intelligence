@@ -1,0 +1,265 @@
+
+<project name="A1" basedir="." default="main">
+
+    <property name="src.dir"     value="."/>
+    <property name="build.dir"   value="build"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="jar.dir"     value="${build.dir}/jar"/>
+    <property name="main-class"  value="Read"/>
+   <!-- <property name="project.classpath" value="../aima-core.jar"/>-->
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${classes.dir}"/>
+        <javac 
+            includeantruntime="false" 
+            srcdir="${src.dir}" 
+            destdir="${classes.dir}" 
+            classpath="${project.classpath}"
+            debug="true"  />
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="${jar.dir}"/>
+        <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${classes.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}"/>
+            </manifest>
+        </jar>
+    </target>
+
+
+    <target name="run1" depends="jar">
+        <java classname="${main-class}" fork="true">
+            <arg value="./benchmarks/1.txt"/>
+            <arg value="out.txt"/>
+            <classpath>
+                <pathelement path="${project.classpath}"/>
+                <pathelement location="${jar.dir}/${ant.project.name}.jar" />
+            </classpath>
+        </java>
+    </target>
+
+        <target name="run2" depends="jar">
+        <java classname="${main-class}" fork="true">
+            <arg value="./benchmarks/2.txt"/>
+            <arg value="out.txt"/>
+            <classpath>
+                <pathelement path="${project.classpath}"/>
+                <pathelement location="${jar.dir}/${ant.project.name}.jar" />
+            </classpath>
+        </java>
+    </target>
+
+        <target name="run3" depends="jar">
+        <java classname="${main-class}" fork="true">
+            <arg value="./benchmarks/3.txt"/>
+            <arg value="out.txt"/>
+            <classpath>
+                <pathelement path="${project.classpath}"/>
+                <pathelement location="${jar.dir}/${ant.project.name}.jar" />
+            </classpath>
+        </java>
+    </target>
+
+    <target name="run4" depends="jar">
+        <java classname="${main-class}" fork="true">
+            <arg value="./benchmarks/4.txt"/>
+            <arg value="out.txt"/>
+            <classpath>
+                <pathelement path="${project.classpath}"/>
+                <pathelement location="${jar.dir}/${ant.project.name}.jar" />
+            </classpath>
+        </java>
+    </target>
+
+    <target name="run5" depends="jar">
+        <java classname="${main-class}" fork="true">
+            <arg value="./benchmarks/5.txt"/>
+            <arg value="out.txt"/>
+            <classpath>
+                <pathelement path="${project.classpath}"/>
+                <pathelement location="${jar.dir}/${ant.project.name}.jar" />
+            </classpath>
+        </java>
+    </target>
+
+    <target name="run6" depends="jar">
+        <java classname="${main-class}" fork="true">
+            <arg value="./benchmarks/6.txt"/>
+            <arg value="out.txt"/>
+            <classpath>
+                <pathelement path="${project.classpath}"/>
+                <pathelement location="${jar.dir}/${ant.project.name}.jar" />
+            </classpath>
+        </java>
+    </target>
+
+    <target name="run7" depends="jar">
+        <java classname="${main-class}" fork="true">
+            <arg value="./benchmarks/7.txt"/>
+            <arg value="out.txt"/>
+            <classpath>
+                <pathelement path="${project.classpath}"/>
+                <pathelement location="${jar.dir}/${ant.project.name}.jar" />
+            </classpath>
+        </java>
+    </target>
+
+    <target name="run8" depends="jar">
+        <java classname="${main-class}" fork="true">
+            <arg value="./benchmarks/8.txt"/>
+            <arg value="out.txt"/>
+            <classpath>
+                <pathelement path="${project.classpath}"/>
+                <pathelement location="${jar.dir}/${ant.project.name}.jar" />
+            </classpath>
+        </java>
+    </target>
+
+    <target name="run9" depends="jar">
+        <java classname="${main-class}" fork="true">
+            <arg value="./benchmarks/9.txt"/>
+            <arg value="out.txt"/>
+            <classpath>
+                <pathelement path="${project.classpath}"/>
+                <pathelement location="${jar.dir}/${ant.project.name}.jar" />
+            </classpath>
+        </java>
+    </target>
+
+    <target name="run10" depends="jar">
+        <java classname="${main-class}" fork="true">
+            <arg value="./benchmarks/10.txt"/>
+            <arg value="out.txt"/>
+            <classpath>
+                <pathelement path="${project.classpath}"/>
+                <pathelement location="${jar.dir}/${ant.project.name}.jar" />
+            </classpath>
+        </java>
+    </target>
+
+    <target name="run11" depends="jar">
+        <java classname="${main-class}" fork="true">
+            <arg value="./benchmarks/11.txt"/>
+            <arg value="out.txt"/>
+            <classpath>
+                <pathelement path="${project.classpath}"/>
+                <pathelement location="${jar.dir}/${ant.project.name}.jar" />
+            </classpath>
+        </java>
+    </target>
+
+        <target name="run12" depends="jar">
+        <java classname="${main-class}" fork="true">
+            <arg value="./benchmarks/12.txt"/>
+            <arg value="out.txt"/>
+            <classpath>
+                <pathelement path="${project.classpath}"/>
+                <pathelement location="${jar.dir}/${ant.project.name}.jar" />
+            </classpath>
+        </java>
+    </target>
+
+        <target name="run13" depends="jar">
+        <java classname="${main-class}" fork="true">
+            <arg value="./benchmarks/13.txt"/>
+            <arg value="out.txt"/>
+            <classpath>
+                <pathelement path="${project.classpath}"/>
+                <pathelement location="${jar.dir}/${ant.project.name}.jar" />
+            </classpath>
+        </java>
+    </target>
+
+    <target name="run14" depends="jar">
+        <java classname="${main-class}" fork="true">
+            <arg value="./benchmarks/14.txt"/>
+            <arg value="out.txt"/>
+            <classpath>
+                <pathelement path="${project.classpath}"/>
+                <pathelement location="${jar.dir}/${ant.project.name}.jar" />
+            </classpath>
+        </java>
+    </target>
+
+    <target name="run15" depends="jar">
+        <java classname="${main-class}" fork="true">
+            <arg value="./benchmarks/15.txt"/>
+            <arg value="out.txt"/>
+            <classpath>
+                <pathelement path="${project.classpath}"/>
+                <pathelement location="${jar.dir}/${ant.project.name}.jar" />
+            </classpath>
+        </java>
+    </target>
+
+    <target name="run16" depends="jar">
+        <java classname="${main-class}" fork="true">
+            <arg value="./benchmarks/16.txt"/>
+            <arg value="out.txt"/>
+            <classpath>
+                <pathelement path="${project.classpath}"/>
+                <pathelement location="${jar.dir}/${ant.project.name}.jar" />
+            </classpath>
+        </java>
+    </target>
+
+    <target name="run17" depends="jar">
+        <java classname="${main-class}" fork="true">
+            <arg value="./benchmarks/17.txt"/>
+            <arg value="out.txt"/>
+            <classpath>
+                <pathelement path="${project.classpath}"/>
+                <pathelement location="${jar.dir}/${ant.project.name}.jar" />
+            </classpath>
+        </java>
+    </target>
+
+    <target name="run18" depends="jar">
+        <java classname="${main-class}" fork="true">
+            <arg value="./benchmarks/18.txt"/>
+            <arg value="out.txt"/>
+            <classpath>
+                <pathelement path="${project.classpath}"/>
+                <pathelement location="${jar.dir}/${ant.project.name}.jar" />
+            </classpath>
+        </java>
+    </target>
+
+    <target name="run19" depends="jar">
+        <java classname="${main-class}" fork="true">
+            <arg value="./benchmarks/19.txt"/>
+            <arg value="out.txt"/>
+            <classpath>
+                <pathelement path="${project.classpath}"/>
+                <pathelement location="${jar.dir}/${ant.project.name}.jar" />
+            </classpath>
+        </java>
+    </target>
+
+    <target name="run20" depends="jar">
+        <java classname="${main-class}" fork="true">
+            <arg value="./benchmarks/20.txt"/>
+            <arg value="out.txt"/>
+            <classpath>
+                <pathelement path="${project.classpath}"/>
+                <pathelement location="${jar.dir}/${ant.project.name}.jar" />
+            </classpath>
+        </java>
+    </target>
+
+
+    <target name="run" depends="run1,run2,run3,run4,run5,run6,run7,run8,run9,run10,run11,run12,run13,run14,run15,run16,run17,run18,run19,run20"/>
+
+    <target name="clean-build" depends="clean,jar"/>
+
+    <target name="main" depends="clean,run"/>
+    
+    <target name="build" depends="clean,jar"/>
+
+</project>
+

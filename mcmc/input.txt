@@ -1,0 +1,4 @@
+"HREKG" = "High"
+"ExpCO2" = "Zero"
+"CVP" = "Normal"
+.

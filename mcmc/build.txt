@@ -1,0 +1,38 @@
+Buildfile: /home/alanl/Documents/CSEP573/A4/build.xml
+
+build:
+    [javac] Compiling 1 source file to /home/alanl/Documents/CSEP573/A4/build/classes
+    [javac] /home/alanl/Documents/CSEP573/A4/DJ.java:2: error: package InferenceGraphs does not exist
+    [javac] import InferenceGraphs.*;
+    [javac] ^
+    [javac] /home/alanl/Documents/CSEP573/A4/DJ.java:14: error: cannot find symbol
+    [javac] 			InferenceGraph G=new InferenceGraph("hw5.bif");
+    [javac] 			^
+    [javac]   symbol:   class InferenceGraph
+    [javac]   location: class DJ
+    [javac] /home/alanl/Documents/CSEP573/A4/DJ.java:14: error: cannot find symbol
+    [javac] 			InferenceGraph G=new InferenceGraph("hw5.bif");
+    [javac] 			                     ^
+    [javac]   symbol:   class InferenceGraph
+    [javac]   location: class DJ
+    [javac] /home/alanl/Documents/CSEP573/A4/DJ.java:16: error: cannot find symbol
+    [javac] 			InferenceGraphNode n=((InferenceGraphNode)nodes.elementAt(0));
+    [javac] 			^
+    [javac]   symbol:   class InferenceGraphNode
+    [javac]   location: class DJ
+    [javac] /home/alanl/Documents/CSEP573/A4/DJ.java:16: error: cannot find symbol
+    [javac] 			InferenceGraphNode n=((InferenceGraphNode)nodes.elementAt(0));
+    [javac] 			                       ^
+    [javac]   symbol:   class InferenceGraphNode
+    [javac]   location: class DJ
+    [javac] /home/alanl/Documents/CSEP573/A4/DJ.java:29: error: cannot find symbol
+    [javac] 			        InferenceGraphNode no = (InferenceGraphNode)(e.nextElement());
+    [javac] 			        ^
+    [javac]   symbol:   class InferenceGraphNode
+    [javac]   location: class DJ
+    [javac] /home/alanl/Documents/CSEP573/A4/DJ.java:29: error: cannot find symbol
+    [javac] 			        InferenceGraphNode no = (InferenceGraphNode)(e.nextElement());
+    [javac] 			                                 ^
+    [javac]   symbol:   class InferenceGraphNode
+    [javac]   location: class DJ
+    [javac] 7 errors
